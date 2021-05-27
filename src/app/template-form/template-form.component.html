@@ -1,0 +1,360 @@
+<div class="container">
+  <form (ngSubmit)="submit()" #forma="ngForm">
+    <div class="row">
+      <!-- NOMBRE -->
+      <div class="col">
+        <label for="nombre">Nombre</label>
+        <input
+          type="text"
+          #nombre="ngModel"
+          [(ngModel)]="trabajador.nombre"
+          placeholder="Ingrese su nombre"
+          name="nombre"
+          minlength="5"
+          class="form-control"
+          required
+          [ngClass]="{
+            'is-valid': !nombre.invalid,
+            'is-invalid': nombre.invalid
+          }"
+        />
+
+        <div
+          class="invalid-feedback"
+          *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)"
+        >
+          <div *ngIf="nombre.errors!.minlength">
+            Ingrese un nombre con 5 caracteres minimo
+          </div>
+          <div *ngIf="nombre.errors!.required">Ingrese un nombre valido</div>
+        </div>
+      </div>
+      <!-- CARNET DE IDENTIDAD -->
+      <div class="col">
+        <label for="ci">Carnet de Identidad</label>
+
+        <input
+          type="text"
+          #ci="ngModel"
+          [(ngModel)]="trabajador.ci"
+          placeholder="Ingrese su ci"
+          name="ci"
+          minlength="5"
+          class="form-control"
+          required
+          [ngClass]="{ 'is-valid': !ci.invalid, 'is-invalid': ci.invalid }"
+        />
+
+        <div
+          class="invalid-feedback"
+          *ngIf="ci.invalid && (ci.dirty || ci.touched)"
+        >
+          <div *ngIf="ci.errors!.minlength">
+            Ingrese un ci con 5 caracteres minimo
+          </div>
+          <div *ngIf="ci.errors!.required">Ingrese un ci valido</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!-- ID -->
+      <div class="col">
+        <label for="id">Numero de identificacion</label>
+        <input
+          type="text"
+          #id="ngModel"
+          [(ngModel)]="trabajador.id"
+          placeholder="Ingrese su id"
+          name="id"
+          minlength="5"
+          class="form-control"
+          required
+          [ngClass]="{ 'is-valid': !id.invalid, 'is-invalid': id.invalid }"
+        />
+
+        <div
+          class="invalid-feedback"
+          *ngIf="id.invalid && (id.dirty || id.touched)"
+        >
+          <div *ngIf="id.errors!.minlength">
+            Ingrese un id con 5 caracteres minimo
+          </div>
+          <div *ngIf="id.errors!.required">Ingrese un id valido</div>
+        </div>
+      </div>
+      <!-- AREA -->
+      <div class="col">
+        <label for="area">Area de Trabajo</label>
+        <input
+          type="text"
+          #area="ngModel"
+          [(ngModel)]="trabajador.area"
+          placeholder="Ingrese su area"
+          name="area"
+          minlength="5"
+          class="form-control"
+          required
+          [ngClass]="{ 'is-valid': !area.invalid, 'is-invalid': area.invalid }"
+        />
+
+        <div
+          class="invalid-feedback"
+          *ngIf="area.invalid && (area.dirty || area.touched)"
+        >
+          <div *ngIf="area.errors!.minlength">
+            Ingrese un area con 5 caracteres minimo
+          </div>
+          <div *ngIf="area.errors!.required">Ingrese un ci valido</div>
+        </div>
+      </div>
+      <!-- Salario hora -->
+      <div class="col">
+        <label for="salario_hora">Salario por hora</label>
+        <input
+          type="text"
+          #salario_hora="ngModel"
+          [(ngModel)]="trabajador.salario_hora"
+          placeholder="Ingrese su salario_hora"
+          name="salario_hora"
+          minlength="5"
+          class="form-control"
+          required
+          [ngClass]="{
+            'is-valid': !salario_hora.invalid,
+            'is-invalid': salario_hora.invalid
+          }"
+        />
+
+        <div
+          class="invalid-feedback"
+          *ngIf="
+            salario_hora.invalid && (salario_hora.dirty || salario_hora.touched)
+          "
+        >
+          <div *ngIf="salario_hora.errors!.minlength">
+            Ingrese un salario_hora con 5 caracteres minimo
+          </div>
+          <div *ngIf="salario_hora.errors!.required">
+            Ingrese un salario_hora valido
+          </div>
+        </div>
+      </div>
+      <!-- Salario_mes -->
+      <div class="col">
+        <label for="salario_mes">Salario mensual</label>
+        <input
+          type="text"
+          #salario_mes="ngModel"
+          [(ngModel)]="trabajador.salario_mes"
+          placeholder="Ingrese su salario_mes"
+          name="salario_mes"
+          minlength="5"
+          class="form-control"
+          required
+          [ngClass]="{
+            'is-valid': !salario_mes.invalid,
+            'is-invalid': salario_mes.invalid
+          }"
+        />
+
+        <div
+          class="invalid-feedback"
+          *ngIf="
+            salario_mes.invalid && (salario_mes.dirty || salario_mes.touched)
+          "
+        >
+          <div *ngIf="salario_mes.errors!.minlength">
+            Ingrese un salario_mes con 5 caracteres minimo
+          </div>
+          <div *ngIf="salario_mes.errors!.required">
+            Ingrese un salario_mes valido
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SEGURO -->
+    <label for="seguro">Datos de su seguro</label>
+    <input
+      type="text"
+      #seguro="ngModel"
+      [(ngModel)]="trabajador.seguro"
+      placeholder="Ingrese su seguro"
+      name="seguro"
+      minlength="5"
+      class="form-control"
+      required
+      [ngClass]="{ 'is-valid': !seguro.invalid, 'is-invalid': seguro.invalid }"
+    />
+
+    <div
+      class="invalid-feedback"
+      *ngIf="seguro.invalid && (seguro.dirty || seguro.touched)"
+    >
+      <div *ngIf="seguro.errors!.minlength">
+        Ingrese un seguro con 5 caracteres minimo
+      </div>
+      <div *ngIf="seguro.errors!.required">Ingrese un seguro valido</div>
+    </div>
+    <!-- SANGRE -->
+
+    <label for="sangre">Tipo de Sangre</label>
+    <select
+      [(ngModel)]="trabajador.sangre"
+      formControlName="sangre"
+      class="form-control"
+    >
+      <option disabled>Tipos de sangre</option>
+      <option *ngFor="let tipo of tiposSangre">{{ tipo }}</option>
+    </select>
+    <!-- <input
+      type="text"
+      #sangre="ngModel"
+      [(ngModel)]="trabajador.sangre"
+      placeholder="Ingrese su sangre"
+      name="sangre"
+      minlength="5"
+      class="form-control"
+      required
+      [ngClass]="{ 'is-valid': !sangre.invalid, 'is-invalid': sangre.invalid }"
+    /> -->
+
+    <!-- ESTATURA -->
+    <label for="estatura">Estatura</label>
+    <input
+      type="number"
+      #estatura="ngModel"
+      [(ngModel)]="trabajador.estatura"
+      placeholder="Ingrese su estatura"
+      name="estatura"
+      minlength="5"
+      class="form-control"
+      required
+      [ngClass]="{
+        'is-valid': !estatura.invalid,
+        'is-invalid': estatura.invalid
+      }"
+    />
+
+    <div
+      class="invalid-feedback"
+      *ngIf="estatura.invalid && (estatura.dirty || estatura.touched)"
+    >
+      <div *ngIf="estatura.errors!.minlength">
+        Ingrese un estatura con 5 caracteres minimo
+      </div>
+      <div *ngIf="estatura.errors!.required">Ingrese un estatura valido</div>
+    </div>
+    <!-- PESO -->
+    <label for="peso">Carnet de Identidad</label>
+    <input
+      type="number"
+      #peso="ngModel"
+      [(ngModel)]="trabajador.peso"
+      placeholder="Ingrese su peso"
+      name="peso"
+      minlength="5"
+      class="form-control"
+      required
+      [ngClass]="{ 'is-valid': !peso.invalid, 'is-invalid': peso.invalid }"
+    />
+
+    <div
+      class="invalid-feedback"
+      *ngIf="peso.invalid && (peso.dirty || peso.touched)"
+    >
+      <div *ngIf="peso.errors!.minlength">
+        Ingrese un peso con 5 caracteres minimo
+      </div>
+      <div *ngIf="peso.errors!.required">Ingrese un peso valido</div>
+    </div>
+    <!-- ENFERMEDAD -->
+    <label for="enfermedad">Carnet de Identidad</label>
+    <input
+      type="text"
+      #enfermedad="ngModel"
+      [(ngModel)]="trabajador.enfermedad"
+      placeholder="Ingrese su enfermedad"
+      name="enfermedad"
+      minlength="5"
+      class="form-control"
+      required
+      [ngClass]="{
+        'is-valid': !enfermedad.invalid,
+        'is-invalid': enfermedad.invalid
+      }"
+    />
+
+    <div
+      class="invalid-feedback"
+      *ngIf="enfermedad.invalid && (enfermedad.dirty || enfermedad.touched)"
+    >
+      <div *ngIf="enfermedad.errors!.minlength">
+        Ingrese un enfermedad con 5 caracteres minimo
+      </div>
+      <div *ngIf="enfermedad.errors!.required">
+        Ingrese un enfermedad valido
+      </div>
+    </div>
+    <!-- TELEFONO -->
+    <label for="telefono">telefono telefonico</label>
+    <input
+      type="number"
+      #telefono="ngModel"
+      [(ngModel)]="trabajador.telefono"
+      placeholder="Ingrese su telefono"
+      name="telefono"
+      minlength="5"
+      class="form-control"
+      required
+      [ngClass]="{
+        'is-valid': !telefono.invalid,
+        'is-invalid': telefono.invalid
+      }"
+    />
+
+    <div
+      class="invalid-feedback"
+      *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)"
+    >
+      <div *ngIf="telefono.errors!.minlength">
+        Ingrese un telefono con 5 caracteres minimo
+      </div>
+      <div *ngIf="telefono.errors!.required">Ingrese un telefono valido</div>
+    </div>
+    <!-- Correo -->
+    <label for="correo">Correo electronico</label>
+    <input
+      type="email"
+      pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+      #correo="ngModel"
+      [(ngModel)]="trabajador.correo"
+      placeholder="Ingrese su correo"
+      name="correo"
+      minlength="5"
+      class="form-control"
+      required
+      [ngClass]="{ 'is-valid': !correo.invalid, 'is-invalid': correo.invalid }"
+    />
+
+    <div
+      class="invalid-feedback"
+      *ngIf="correo.invalid && (correo.dirty || correo.touched)"
+    >
+      <div *ngIf="correo.errors!.minlength">
+        Ingrese un correo con 5 caracteres minimo
+      </div>
+      <div *ngIf="correo.errors!.required">Ingrese un correo valido</div>
+    </div>
+    <button
+      class="mt-3 btn btn-primary"
+      type="submit"
+      [disabled]="!forma.valid"
+    >
+      Enviar Journal
+    </button>
+  </form>
+
+  <button class="mt-3 btn btn-warning" (click)="verJournals()">
+    Ver todos los Journals
+  </button>
+</div>
